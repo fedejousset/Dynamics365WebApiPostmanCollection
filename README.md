@@ -34,7 +34,8 @@ When the collection is loaded into Postman, it will also load a set of variables
 
 | **Variable** | **Description** |
 | ----------- | --------------- |
-| `ApplicationId` | Azure Application ID used to authenticate the user|
+| `OAuth2Endpoint` | The OAuth 2.0 Token Endpoint from Azure AD - only needed if playing with Auth requests|
+| `ApplicationId` | Azure Application ID used to authenticate the user or client|
 | `RedirectUrl` | Redirct URL configured in the Azure AD Application|
 | `Resource` | Dynamics 365 Organization that has been configured in the AAD Application Delegated Permissions section. For intance, `https://yourorg.crm4.dynamics.com`|
 

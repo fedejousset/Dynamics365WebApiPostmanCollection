@@ -1,10 +1,109 @@
 {
 	"info": {
-		"_postman_id": "0198a4f4-21ba-41d5-a67a-9b64146cb77c",
+		"_postman_id": "53984234-f11f-4124-a476-ac8489a62beb",
 		"name": "Dynamics 365 CE Web API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
+		{
+			"name": "Authentications",
+			"item": [
+				{
+					"name": "Authenticate - Client Credentials (SAMPLE)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "resource",
+									"value": "{{Resource}}",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "{{ApplicationId}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{OAuth2Endpoint}}",
+							"host": [
+								"{{OAuth2Endpoint}}"
+							]
+						},
+						"description": "Sample request to get authenticate (get access token) with client credentials"
+					},
+					"response": []
+				},
+				{
+					"name": "Authenticate - User Credentials (SAMPLE)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "resource",
+									"value": "{{Resource}}",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "{{ApplicationId}}",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{OAuth2Endpoint}}",
+							"host": [
+								"{{OAuth2Endpoint}}"
+							]
+						},
+						"description": "Sample request to get authenticate (get access and refresh tokens) with user credentials"
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			}
+		},
 		{
 			"name": "Basic Operations",
 			"item": [
@@ -543,7 +642,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"IsWorkingDayRequest\": \"{\\n  \\\"Date\\\": \\\"2018-12-22T12:01:52\\\",\\n  \\\"CalendarName\\\": \\\"NCC Team Calendar - Outbound\\\"\\n}\"\r\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{WebAPIUrl}}/contacts(00000000-0000-0000-0000-000000000000)",
@@ -582,7 +681,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"IsWorkingDayRequest\": \"{\\n  \\\"Date\\\": \\\"2018-12-22T12:01:52\\\",\\n  \\\"CalendarName\\\": \\\"NCC Team Calendar - Outbound\\\"\\n}\"\r\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{WebAPIUrl}}/contacts(00000000-0000-0000-0000-000000000000)/fullname",
@@ -622,7 +721,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"IsWorkingDayRequest\": \"{\\n  \\\"Date\\\": \\\"2018-12-22T12:01:52\\\",\\n  \\\"CalendarName\\\": \\\"NCC Team Calendar - Outbound\\\"\\n}\"\r\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{WebAPIUrl}}/contacts(emailaddress1='riquelme@boca.com')?$select=fullname",
@@ -671,7 +770,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"IsWorkingDayRequest\": \"{\\n  \\\"Date\\\": \\\"2018-12-22T12:01:52\\\",\\n  \\\"CalendarName\\\": \\\"NCC Team Calendar - Outbound\\\"\\n}\"\r\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{WebAPIUrl}}/contacts(00000000-0000-0000-0000-000000000000)",
@@ -710,7 +809,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"IsWorkingDayRequest\": \"{\\n  \\\"Date\\\": \\\"2018-12-22T12:01:52\\\",\\n  \\\"CalendarName\\\": \\\"NCC Team Calendar - Outbound\\\"\\n}\"\r\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{WebAPIUrl}}/contacts(00000000-0000-0000-0000-000000000000)?$select=fullname&$expand=parentcustomerid_account($select=name)",
@@ -759,7 +858,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"IsWorkingDayRequest\": \"{\\n  \\\"Date\\\": \\\"2018-12-22T12:01:52\\\",\\n  \\\"CalendarName\\\": \\\"NCC Team Calendar - Outbound\\\"\\n}\"\r\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{WebAPIUrl}}/contacts?$select=fullname,contactid, gendercode",
@@ -804,7 +903,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"IsWorkingDayRequest\": \"{\\n  \\\"Date\\\": \\\"2018-12-22T12:01:52\\\",\\n  \\\"CalendarName\\\": \\\"NCC Team Calendar - Outbound\\\"\\n}\"\r\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{WebAPIUrl}}/contacts?fetchXml=<fetch count=\"10\" ><entity name=\"contact\" ><attribute name=\"fullname\" /></entity></fetch>",
@@ -1053,7 +1152,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"IsWorkingDayRequest\": \"{\\n  \\\"Date\\\": \\\"2018-12-22T12:01:52\\\",\\n  \\\"CalendarName\\\": \\\"NCC Team Calendar - Outbound\\\"\\n}\"\r\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{WebAPIUrl}}/WhoAmI()",
@@ -1088,7 +1187,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"IsWorkingDayRequest\": \"{\\n  \\\"Date\\\": \\\"2018-12-22T12:01:52\\\",\\n  \\\"CalendarName\\\": \\\"NCC Team Calendar - Outbound\\\"\\n}\"\r\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{WebAPIUrl}}/FetchXmlToQueryExpression(FetchXml=@p1)?@p1='<fetch count=\"10\" ><entity name=\"contact\" ><attribute name=\"fullname\" /></entity></fetch>'",
@@ -1129,7 +1228,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"IsWorkingDayRequest\": \"{\\n  \\\"Date\\\": \\\"2018-12-22T12:01:52\\\",\\n  \\\"CalendarName\\\": \\\"NCC Team Calendar - Outbound\\\"\\n}\"\r\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{WebAPIUrl}}/timezonedefinitions/Microsoft.Dynamics.CRM.GetAllTimeZonesWithDisplayName(LocaleId=1033)",
@@ -1165,7 +1264,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"IsWorkingDayRequest\": \"{\\n  \\\"Date\\\": \\\"2018-12-22T12:01:52\\\",\\n  \\\"CalendarName\\\": \\\"NCC Team Calendar - Outbound\\\"\\n}\"\r\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{WebAPIUrl}}/GetTimeZoneCodeByLocalizedName(LocalizedStandardName=@p1,LocaleId=@p2)?@p1='Coordinated Universal Time'&@p2=1033",
@@ -1210,7 +1309,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"IsWorkingDayRequest\": \"{\\n  \\\"Date\\\": \\\"2018-12-22T12:01:52\\\",\\n  \\\"CalendarName\\\": \\\"NCC Team Calendar - Outbound\\\"\\n}\"\r\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{WebAPIUrl}}/RetrieveVersion()",
@@ -1245,7 +1344,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"IsWorkingDayRequest\": \"{\\n  \\\"Date\\\": \\\"2018-12-22T12:01:52\\\",\\n  \\\"CalendarName\\\": \\\"NCC Team Calendar - Outbound\\\"\\n}\"\r\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{WebAPIUrl}}/RetrieveCurrentOrganization(AccessType=Microsoft.Dynamics.CRM.EndpointAccessType'Default')",
@@ -1280,7 +1379,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"IsWorkingDayRequest\": \"{\\n  \\\"Date\\\": \\\"2018-12-22T12:01:52\\\",\\n  \\\"CalendarName\\\": \\\"NCC Team Calendar - Outbound\\\"\\n}\"\r\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{WebAPIUrl}}/RetrieveOrganizationInfo()",
@@ -1315,7 +1414,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"IsWorkingDayRequest\": \"{\\n  \\\"Date\\\": \\\"2018-12-22T12:01:52\\\",\\n  \\\"CalendarName\\\": \\\"NCC Team Calendar - Outbound\\\"\\n}\"\r\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{WebAPIUrl}}/RetrieveOrganizationResources()",
@@ -1350,7 +1449,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"IsWorkingDayRequest\": \"{\\n  \\\"Date\\\": \\\"2018-12-22T12:01:52\\\",\\n  \\\"CalendarName\\\": \\\"NCC Team Calendar - Outbound\\\"\\n}\"\r\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{WebAPIUrl}}/RetrieveDependenciesForDelete(ObjectId=00000000-0000-0000-0000-000000000000, ComponentType=1)",
@@ -1385,7 +1484,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"IsWorkingDayRequest\": \"{\\n  \\\"Date\\\": \\\"2018-12-22T12:01:52\\\",\\n  \\\"CalendarName\\\": \\\"NCC Team Calendar - Outbound\\\"\\n}\"\r\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{WebAPIUrl}}/RetrieveEntityRibbon(EntityName='contact', RibbonLocationFilter=Microsoft.Dynamics.CRM.RibbonLocationFilters'Form')",
@@ -1420,7 +1519,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"IsWorkingDayRequest\": \"{\\n  \\\"Date\\\": \\\"2018-12-22T12:01:52\\\",\\n  \\\"CalendarName\\\": \\\"NCC Team Calendar - Outbound\\\"\\n}\"\r\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{WebAPIUrl}}/RetrieveExchangeRate(TransactionCurrencyId=00000000-0000-0000-0000-000000000000)",
@@ -1455,7 +1554,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"IsWorkingDayRequest\": \"{\\n  \\\"Date\\\": \\\"2018-12-22T12:01:52\\\",\\n  \\\"CalendarName\\\": \\\"NCC Team Calendar - Outbound\\\"\\n}\"\r\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{WebAPIUrl}}/RetrieveMissingDependencies(SolutionUniqueName='solutionname')",
@@ -1490,7 +1589,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"IsWorkingDayRequest\": \"{\\n  \\\"Date\\\": \\\"2018-12-22T12:01:52\\\",\\n  \\\"CalendarName\\\": \\\"NCC Team Calendar - Outbound\\\"\\n}\"\r\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{WebAPIUrl}}/systemusers(00000000-0000-0000-0000-000000000000)/Microsoft.Dynamics.CRM.RetrievePrincipalAccess(Target=@p1)?@p1={'@odata.id':'contacts(00000000-0000-0000-0000-000000000000)'}",
@@ -1885,7 +1984,7 @@
 		"oauth2": [
 			{
 				"key": "accessToken",
-				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Imk2bEdrM0ZaenhSY1ViMkMzbkVRN3N5SEpsWSIsImtpZCI6Imk2bEdrM0ZaenhSY1ViMkMzbkVRN3N5SEpsWSJ9.eyJhdWQiOiJodHRwczovL3N3dGVzdDExLmNybTExLmR5bmFtaWNzLmNvbSIsImlzcyI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0L2M0Mjc3Y2ZlLTA3OTktNDQ2ZC1hYjZhLTljODRmZDUwMDE3MC8iLCJpYXQiOjE1MzY4NDU4ODQsIm5iZiI6MTUzNjg0NTg4NCwiZXhwIjoxNTM2ODQ5Nzg0LCJhY3IiOiIxIiwiYWlvIjoiNDJCZ1lIaG1KdTRXdG02cXpxc2xQVHl6cEhkTVZiSStjYUJmODZoZ1d0dEJOdTFkTGtzQiIsImFtciI6WyJwd2QiXSwiYXBwaWQiOiJjMzRjOTVkMy02MjFjLTRmMWYtOWY1Zi0yMTIyZmFhNjNiNGYiLCJhcHBpZGFjciI6IjAiLCJmYW1pbHlfbmFtZSI6IkpvdXNzZXQiLCJnaXZlbl9uYW1lIjoiRmVkZXJpY28iLCJpcGFkZHIiOiIxOTIuMTc2LjIwMy4xMCIsIm5hbWUiOiJGZWRlcmljbyBKb3Vzc2V0Iiwib2lkIjoiMDZhZjk0ODctNzk0ZC00NmE5LTkxZGItNWUzOGJmYTQ2MDIyIiwicHVpZCI6IjEwMDMwMDAwQURBNUUxQzkiLCJzY3AiOiJ1c2VyX2ltcGVyc29uYXRpb24iLCJzdWIiOiJPNjBTdk41c0dXTE9BZzdVUVJORExrZm1VYjZ1VDA0dUctOENmRVdJTXBFIiwidGlkIjoiYzQyNzdjZmUtMDc5OS00NDZkLWFiNmEtOWM4NGZkNTAwMTcwIiwidW5pcXVlX25hbWUiOiJhZG1pbkBzd3Rlc3QxMS5vbm1pY3Jvc29mdC5jb20iLCJ1cG4iOiJhZG1pbkBzd3Rlc3QxMS5vbm1pY3Jvc29mdC5jb20iLCJ1dGkiOiJrOXVWX05jU3lrdWpYdGRmV0ZKYkFBIiwidmVyIjoiMS4wIn0.S-hXW9I5HudDWw6t8FDIwZXej0qu8ynRd8WqIUGZjTEL-hgyoRanexux5vrrxpoAPdmCKXEROpGPfHHb-Zee8VP9HaVWY4uw3xRGhU_VsCab_qx-yJMO-P2VT7510Xs5linwJH0ZtxrQd0wASEgg1lG4MHn_jG9LWRcEHrsr1nEBJNy0Cm-77PeIvVYiD-KLlZuiJByfVui-j7iCa5FeqMKVbeAQp_8bhoMU3SYK_5DhuPdybGeVjMUxhve30JRexF6O8G73RK7kSyzweuMmP7l1RQjJ7bMuiJ_ANANenaP5jdcqevChAJH2XpW7BKCusRdhsr7vfCh48yAmB7F8Mg",
+				"value": "",
 				"type": "string"
 			},
 			{
